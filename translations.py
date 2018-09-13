@@ -1,5 +1,21 @@
 class En:
-    home = 'Home'
+    nav = {
+        'brand': 'BONASIA HOLIDAYS',
+        'home': 'Home',
+        'language': 'Language',
+        'language_list': {
+            'en': 'English',
+            'zh': '中文'
+        }
+        }
 
 class Zh:
-    home = '主页'
+    nav = {
+        'brand': '天乐假期',
+        'home': '主页',
+        'language': '语言',
+        'language_list': {
+            'en': 'English',
+            'zh': '中文'
+        }
+        }

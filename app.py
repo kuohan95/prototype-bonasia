@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-from flask import Flask, render_template, session as flask_session, redirect, url_for
+from flask import Flask, render_template, session as flask_session, redirect, url_for, request
 import translations
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Redirects the user if no language is stored in session
+    # If no language is found in session, do this.
     if 'lang' not in flask_session:
-        return redirect(url_for('choose_lang'))
+        # Find out what language the browser uses and selects the most suitable
+        supported_languages = ['en', 'zh']
+        lang = request.accept_languages.best_match(supported_languages)
+        flask_session['lang'] = lang
 
     if flask_session['lang'] == 'en':
         return render_template('index.html', tl=translations.En)
     if flask_session['lang'] == 'zh':
         return render_template('index.html', tl=translations.Zh)
-
-@app.route('/choose_lang')
-def choose_lang():
-    return render_template('choose_lang.html')
 
 @app.route('/lang/<lang>')
 def change_lang(lang):
