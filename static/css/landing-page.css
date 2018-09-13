@@ -125,3 +125,18 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+#carouselExampleIndicators, .carousel-item , .carousel-inner {
+  height: 500px;
+  
+}
+
+.carousel-item {
+  
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
