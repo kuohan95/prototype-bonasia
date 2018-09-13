@@ -42,8 +42,8 @@
                           {{ tl.nav.language }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">{{ tl.nav.language_list.en }}</a>
-                            <a class="dropdown-item" href="#">{{ tl.nav.language_list.zh }}</a>
+                            <a class="dropdown-item" href="{{ url_for('change_lang', lang='en') }}">{{ tl.nav.language_list.en }}</a>
+                            <a class="dropdown-item" href="{{ url_for('change_lang', lang='zh') }}">{{ tl.nav.language_list.zh }}</a>
                         </div>
                     </li>
                 </ul>
